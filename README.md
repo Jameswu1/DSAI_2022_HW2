@@ -29,3 +29,9 @@ MACD - 透過EMA觀測走勢量\
 ![image](https://user-images.githubusercontent.com/41716487/164413805-91fe0ab9-44df-45e0-a878-37a9fe94d819.png)
 ![image](https://user-images.githubusercontent.com/41716487/164413837-06db202a-c590-4460-bf97-58e6199755e1.png)
 
+## 演算法
+針對預測價格的數值之後，為了在最短的交易日中，以最大次數的交易來達到最佳值\
+因此演算法選擇相對簡易的計算，分別去計算後兩天價格以及後一天價格\
+假設day[i+2]>=day[i+1]\
+代表我能在這短短兩天交易日中，賺到錢，因此就買進\
+與之相反，如果不行，則進行賣出的動作。\
