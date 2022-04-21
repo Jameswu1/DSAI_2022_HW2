@@ -22,7 +22,8 @@ MACD - 透過EMA觀測走勢量\
 運行結果以Prophet以較高的分數取的優勢，因此本篇也單單介紹Prophet\
 \
 針對Prophet的模型，我們透過上述所選定的特徵值來進行運算\
-以下則是針對運行所得到的趨勢
+以下則是針對運行所得到的趨勢\
+
 ![image](https://user-images.githubusercontent.com/41716487/164413720-5ce053c4-58fd-428e-b801-ae3d6696ac20.png)
 ![image](https://user-images.githubusercontent.com/41716487/164413778-1ebd6319-c2f1-4eac-888a-355eb0a693f9.png)
 ![image](https://user-images.githubusercontent.com/41716487/164413805-91fe0ab9-44df-45e0-a878-37a9fe94d819.png)
