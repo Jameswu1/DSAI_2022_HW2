@@ -15,3 +15,16 @@ SMA - 一段期間的股價計算平均值\
 EMA - 根據日期指數遞減加權，計算移動平均值，日期愈近的比重愈高\
 RSI - 觀測買賣超指標\
 MACD - 透過EMA觀測走勢量\
+\
+## 模型選擇
+針對這次的任務，一樣透過兩種模型進行訓練\
+都是經由時間序列的模型，第一個是ARIMA，第二個則是Prophet\
+運行結果以Prophet以較高的分數取的優勢，因此本篇也單單介紹Prophet\
+\
+針對Prophet的模型，我們透過上述所選定的特徵值來進行運算\
+以下則是針對運行所得到的趨勢
+![image](https://user-images.githubusercontent.com/41716487/164413720-5ce053c4-58fd-428e-b801-ae3d6696ac20.png)
+![image](https://user-images.githubusercontent.com/41716487/164413778-1ebd6319-c2f1-4eac-888a-355eb0a693f9.png)
+![image](https://user-images.githubusercontent.com/41716487/164413805-91fe0ab9-44df-45e0-a878-37a9fe94d819.png)
+![image](https://user-images.githubusercontent.com/41716487/164413837-06db202a-c590-4460-bf97-58e6199755e1.png)
+
