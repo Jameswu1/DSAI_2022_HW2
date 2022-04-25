@@ -33,7 +33,7 @@ if __name__ == '__main__':
     parser.add_argument('--output',
                         default='output.csv',
                         help='output file name')
-    args = parser.parse_args()
+    args = parser.parse_args(args=[])
 
     #讀資料 並整理成有時間的序列
     colnames=['open','high','low','close']
