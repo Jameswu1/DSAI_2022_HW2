@@ -81,13 +81,13 @@ if __name__ == '__main__':
     df['MACD_signal'] = pd.Series(df.MACD.ewm(span=9, min_periods=9).mean())
 
 
-    df['y'] = df['open'].shift(-1)
+    df['y'] = df['open'].shift(-2)
     df = df.dropna(axis=0).reset_index(drop=True)
 
     #模型訓練
     features = ['SMA_3','SMA_7','SMA_30','EMA_3','EMA_7','EMA_30','RSI','MACD','MACD_signal']
-    df_train = df[:-len(df_temp_1)]
-    df_valid = df[-len(df_temp_1):]
+    df_train = df[:-len(df_temp_1)+1]
+    df_valid = df[-len(df_temp_1)+1:]
     model_fbp = Prophet()
     for feature in features:
         model_fbp.add_regressor(feature)
@@ -100,8 +100,8 @@ if __name__ == '__main__':
     ans = df_valid["Forecast_Prophet"].values.tolist()
     ans_l = [] 
     tmp = 0
-    for i in range(len(ans)-2):
-        if ans[i+2]>ans[i+1]:
+    for i in range(1,len(ans)-2):
+        if ans[i+1]>ans[i]:
             if tmp != 1:
                 ans_l.append(1)
                 tmp += 1 
@@ -113,12 +113,8 @@ if __name__ == '__main__':
                 tmp += -1 
             else:
                 ans_l.append(0)
-    if tmp == 0:
-        ans_l.append(0)
-    elif tmp == 1:
-        ans_l.append(-1)
-    elif tmp == -1:
-        ans_l.append(1)
+    ans_l.append(0)
+    ans_l.append(0)
 
     #存檔
     test = pd.DataFrame(data=ans_l)
