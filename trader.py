@@ -100,22 +100,21 @@ if __name__ == '__main__':
     ans = df_valid["Forecast_Prophet"].values.tolist()
     ans_l = [] 
     tmp = 0
-    for i in range(1,len(ans)-2):
-        if ans[i+1]>ans[i]:
-            if tmp != 1:
-                ans_l.append(1)
-                tmp += 1 
-            else:
-                ans_l.append(0)
+    for i in range(1,len(ans)-1):
+      if ans[i+1]>ans[i]:
+        if tmp != 1:
+          ans_l.append(1)
+          tmp += 1 
         else:
-            if tmp != -1:
-                ans_l.append(-1)
-                tmp += -1 
-            else:
-                ans_l.append(0)
+          ans_l.append(0)
+      else:
+        if tmp != -1:
+          ans_l.append(-1)
+          tmp += -1 
+        else:
+          ans_l.append(0)
     ans_l.append(0)
     ans_l.append(0)
-
     #存檔
     test = pd.DataFrame(data=ans_l)
     test.to_csv("output.csv")
