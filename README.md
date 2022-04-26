@@ -29,6 +29,10 @@ MACD - 透過EMA觀測走勢量\
 ![image](https://user-images.githubusercontent.com/41716487/164413805-91fe0ab9-44df-45e0-a878-37a9fe94d819.png)
 ![image](https://user-images.githubusercontent.com/41716487/164413837-06db202a-c590-4460-bf97-58e6199755e1.png)
 
+## 預測結果
+![螢幕擷取畫面 2022-04-26 224927](https://user-images.githubusercontent.com/41716487/165328054-05207c0d-c72f-47e8-858d-9aba9e034927.png)
+
+
 ## 演算法
 針對預測價格的數值之後，為了在最短的交易日中，以最大次數的交易來達到最佳值\
 因此演算法選擇相對簡易的計算，分別去計算今天的價格以及預測到的明天價格\
